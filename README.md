@@ -1,114 +1,115 @@
-# Teoria dos Grafos | Instituto de Computação - UFAL
+# Graph Theory | Institute of Computing - UFAL
 
-## 📌 Descrição
+## 📌 Description
 
-Este projeto foi desenvolvido como parte da disciplina de **Teoria dos Grafos**, do curso de Ciência da Computação da **Universidade Federal de Alagoas (UFAL)**.
+This project was developed as part of the Graph Theory course in the Computer Science program at the Federal University of Alagoas (UFAL).
 
-O trabalho consiste na implementação de cinco algoritmos fundamentais em grafos, abordando problemas clássicos como:
-- Caminhos mínimos
-- Árvores geradoras mínimas
-- Componentes fortemente conexas
-- Clique máxima
+The work consists of the implementation of five fundamental graph algorithms, covering classic problems such as:
 
-Todos os algoritmos foram implementados em **C++**, com entrada padronizada por linha de comando, estrutura modular, `Makefile` para compilação e suporte a testes automatizados via shell script.
+- Shortest paths
+- Minimum spanning trees
+- Strongly connected components
+- Maximum clique
+
+All algorithms were implemented in C++, with standardized command-line input, modular structure, a `Makefile` for compilation, and support for automated tests via shell script.
 
 ---
 
-## 👥 Aluna:
+## 👥 Student:
 Leila Maria Biggi de Souza Cavalcante
 
 ---
 
-## 🧠 Algoritmos Implementados
+## 🧠 Implemented Algorithms
 
-### 1. Algoritmo de Prim
-Constrói a Árvore Geradora Mínima (AGM) de um grafo conectado e ponderado, selecionando arestas de menor peso sem formar ciclos.
+### 1. Prim's Algorithm
+Builds the Minimum Spanning Tree (MST) of a connected and weighted graph by selecting edges of minimum weight without forming cycles.
 
-### 2. Algoritmo de Kruskal
-Encontra a AGM utilizando ordenação de arestas por peso, com união de componentes sem ciclos.
+### 2. Kruskal's Algorithm
+Finds the MST by sorting edges by weight and merging components without creating cycles.
 
-### 3. Algoritmo de Dijkstra
-Determina o caminho mínimo de um vértice inicial para os demais vértices em um grafo com pesos não-negativos.
+### 3. Dijkstra's Algorithm
+Determines the shortest path from an initial vertex to all other vertices in a graph with non-negative weights.
 
-### 4. Algoritmo de Kosaraju
-Identifica todas as componentes fortemente conexas de um grafo direcionado por meio de duas passagens de DFS.
+### 4. Kosaraju's Algorithm
+Identifies all strongly connected components of a directed graph through two DFS passes.
 
-### 5. Algoritmo de Carraghan-Pardalos
-Resolve o problema da clique máxima, identificando o maior subconjunto de vértices todos mutuamente adjacentes.
+### 5. Carraghan-Pardalos Algorithm
+Solves the maximum clique problem by identifying the largest subset of vertices that are all mutually adjacent.
 
 ---
 
-## 📁 Estrutura do Repositório
+## 📁 Repository Structure
 
 ```
 projeto-grafos/
-├── Bat1/                   # Scripts e instâncias para testes automatizados
-├── Bat2/                   # Testes automatizados do algoritmo 5
-├── carraghan_pardalos/     # Algoritmo 5: clique máxima
-├── dijkstra/               # Caminho mínimo
-├── kosaraju/               # Componentes fortemente conexas
-├── kruskal/                # Árvore geradora mínima
-├── prim/                   # Árvore geradora mínima
+├── Bat1/                   # Scripts and instances for automated tests
+├── Bat2/                   # Automated tests for algorithm 5
+├── carraghan_pardalos/     # Algorithm 5: maximum clique
+├── dijkstra/               # Shortest path
+├── kosaraju/               # Strongly connected components
+├── kruskal/                # Minimum spanning tree
+├── prim/                   # Minimum spanning tree
 ```
 
 ---
 
-## 🚀 Como Executar
+## 🚀 How to Run
 
-### Clonar o repositório:
+### Clone the repository:
 ```bash
 git clone https://github.com/lawtherea/projeto-grafos.git
 cd projeto-grafos
 ```
 
-### Compilar um algoritmo:
+### Compile an algorithm:
 ```bash
 cd <nome_algoritmo>
 make
 ```
 
-### Execute com os parâmetros desejados, por exemplo:
+### Run it with the desired parameters, for example:
 ```bash
 ./prim -f entrada.txt -i 1 -s
 ```
 
-### Parâmetros aceitos:
-- `-h`: mostra ajuda
-- `-f <arquivo>`: define o arquivo de entrada do grafo
-- `-i <vértice>`: define o vértice inicial (quando aplicável)
-- `-s`: imprime a solução (arestas ou caminho)
-- `-o <arquivo>`: redireciona a saída para um arquivo
+### Accepted parameters:
+- `-h`: shows help
+- `-f <arquivo>`: defines the graph input file
+- `-i <vértice>`: defines the initial vertex (when applicable)
+- `-s`: prints the solution (edges or path)
+- `-o <arquivo>`: redirects output to a file
 
 ---
 
-## 🧪 Rodando os testes automatizados
+## 🧪 Running the automated tests
 
 ```bash
 cd Bat1
 bash Bat1.sh
 ```
 
-⚠️ Requisitos:
-- O script `Bat1.sh` exige `diff` instalado (disponível no Git Bash ou WSL para usuários Windows).
-- Certifique-se de que os binários (`*.bin`) foram gerados corretamente com os nomes esperados.
+⚠️ Requirements:
+- The `Bat1.sh` script requires `diff` to be installed (available in Git Bash or WSL for Windows users).
+- Make sure the binaries (`*.bin`) were generated correctly with the expected names.
 
 ---
 
-## 🧪 Script para testar o algoritmo de Carraghan-Pardalos (Bat2.sh)
+## 🧪 Script to test the Carraghan-Pardalos algorithm (Bat2.sh)
 
-Para executar o script, certifique-se de que o executável carraghan_pardalos.exe está na pasta carraghan_pardalos. Em seguida, execute o script Bat2.sh a partir da pasta Bat2:
+To run the script, make sure that the executable `carraghan_pardalos.exe` is in the `carraghan_pardalos folder`. Then, run the `Bat2.sh` script from the `Bat2` folder:
 
 ```bash
 bash Bat2.sh
 ```
 
-O script irá testar o algoritmo de Carraghan-Pardalos em todos os casos de teste disponíveis e comparar as saídas com os gabaritos correspondentes. 
+The script will test the Carraghan-Pardalos algorithm on all available test cases and compare the outputs with the corresponding answer files.
 
-## 📝 Observações
+## 📝 Notes
 
-- O algoritmo de Carraghan-Pardalos pode retornar diferentes cliques do mesmo tamanho, dependendo da ordem de visita dos vértices.
-- Todos os arquivos foram desenvolvidos conforme as instruções da disciplina.
+- The Carraghan-Pardalos algorithm may return different cliques of the same size, depending on the order in which vertices are visited.
+- All files were developed according to the course instructions.
 
 ---
 
-> Projeto acadêmico — Universidade Federal de Alagoas • Instituto de Computação • Teoria dos Grafos
+> Academic project — Federal University of Alagoas • Institute of Computing • Graph Theory
